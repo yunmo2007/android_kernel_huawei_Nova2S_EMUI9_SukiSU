@@ -60,7 +60,7 @@ jobs:
         rm -rf SukiSU-Ultra
         rm -rf drivers/kernelsu
         rm -rf out
-        curl -LSs "https://raw.githubusercontent.com/SukiSU-Ultra/SukiSU-Ultra/main/kernel/setup.sh" | bash -s susfs-main
+        curl -LSs "https://raw.githubusercontent.com/SukiSU-Ultra/SukiSU-Ultra/main/kernel/setup.sh" | bash -s susfs-1.5.7
         export PATH=$(pwd)/aarch64-linux-android-4.9-bakup/bin/:$PATH
         export ARCH=arm64
         export SUBARCH=arm64
