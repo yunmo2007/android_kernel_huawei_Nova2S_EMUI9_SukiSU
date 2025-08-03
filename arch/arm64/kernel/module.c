@@ -1,4 +1,4 @@
-/*
+﻿/*
  * AArch64 loadable module support.
  *
  * Copyright (C) 2012 ARM Limited
@@ -30,6 +30,7 @@
 #include <asm/insn.h>
 #include <asm/sections.h>
 #include <asm/livepatch-hhee.h>
+#include <linux/set_memory.h>
 
 void *module_alloc(unsigned long size)
 {
