@@ -56,7 +56,6 @@ jobs:
         export PATH=$(pwd)/aarch64-linux-android-4.9-bakup/bin/:$PATH
         export ARCH=arm64
         export SUBARCH=arm64
-        sudo ln -sf /usr/bin/python2.7 /usr/bin/python
         sudo chmod -R 777 $(pwd)/
         make $KERNEL_CMDLINE merge_hi3660_defconfig
         make $KERNEL_CMDLINE -j$(nproc --all)
