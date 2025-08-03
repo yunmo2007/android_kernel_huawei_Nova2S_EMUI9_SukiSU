@@ -42,6 +42,10 @@ jobs:
       id: get_time
       run: |
         echo "TIME=$(TZ=UTC-8 date +%m%d%H%M )" >> $GITHUB_OUTPUT
+
+    - name: Copy KSU support files
+      run: |
+        cp -r KSU_not_kprobe_base_file/* $(pwd)/
         
     - name: Build huawei_Nova2S Kernel
       run: |
@@ -53,6 +57,10 @@ jobs:
           echo "No Config,good."
         fi
 
+        rm -rf SukiSU-Ultra
+        rm -rf drivers/kernelsu
+        rm -rf out
+        curl -LSs "https://raw.githubusercontent.com/SukiSU-Ultra/SukiSU-Ultra/main/kernel/setup.sh" | bash -s nongki
         export PATH=$(pwd)/aarch64-linux-android-4.9-bakup/bin/:$PATH
         export ARCH=arm64
         export SUBARCH=arm64
